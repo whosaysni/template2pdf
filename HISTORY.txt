@@ -1,6 +1,19 @@
 History of template2pdf
 ========================
 
+
+
+Version 0.6
+-----------
+
+Added Flask support (template2pdf.fsk).
+
+0.6.1
+~~~~~
+
+Added default ImageResolver, fixing issue #1.
+(Thanks clsdaniel: http://code.google.com/u/clsdaniel/)
+
 Version 0.5
 -----------
 
@@ -14,7 +27,7 @@ Added font/resource loading support on template2pdf.kfw.
 Version 0.3
 -----------
 
-Added Kay-Framework support (template2pdf.kfw.
+Added Kay-Framework support (template2pdf.kfw).
 
 Version 0.2 (initial version of template2pdf)
 ---------------------------------------------
