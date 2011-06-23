@@ -1,0 +1,3 @@
+prune demos
+prune docs
+prune tests
