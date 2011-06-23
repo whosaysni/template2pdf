@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2010 Accense Technology, Inc. All rights reserved.
+# Copyright (c) 2010, 2011 Accense Technology, Inc. All rights reserved.
 """
 """
 from os.path import abspath, dirname, join

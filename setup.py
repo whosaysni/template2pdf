@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2010 Accense Technology, Inc. All rights reserved.
+# Copyright (c) 2010, 2011 Accense Technology, Inc. All rights reserved.
 
 import glob, sys
 from distutils.core import setup
@@ -9,7 +9,7 @@ except ImportError:
     pass
 
 
-version = '0.6.1'
+version = '0.6.2'
 
 setup(
     name="template2pdf",
