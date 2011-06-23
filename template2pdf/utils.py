@@ -144,7 +144,7 @@ class FontResolver(object):
         faceName = params.get('faceName', '')
         fileName = params.get('fileName', '')
         if not fileName.startswith('/'):
-            fileName = find_resource_abspath(fileName, FONT_DIRS)
+            fileName = find_resource_abspath(fileName, self.font_dirs)
         subfontIndex = int(params.get('subfontIndes', '0'))
         key = (faceName, fileName, subfontIndex)
         if key in self.font_cache:
