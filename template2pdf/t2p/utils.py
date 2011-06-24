@@ -126,7 +126,7 @@ def getAttrAsIntTuple(node, attr_name, default=None):
 tuple_int_get = getAttrAsIntTuple # for backward compatibility.
 
 
-type_map = dict(str=unicode, bool=as_bool, int=int, text=unicode)
+type_map = dict(str=unicode, bool=as_bool, int=int, text=unicode, pt=as_pt)
 def getAttrsAsDict(node, attrs, typed_attrs={}):
     """Returns dictionary of values for given attributes.
 

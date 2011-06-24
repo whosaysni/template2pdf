@@ -605,8 +605,12 @@ class _rml_flowable(object):
             return platypus.CondPageBreak(1000)           # TODO: change the 1000 !
         elif barcode_codes and node.localName=='barCode':
             code = barcode_codes.get(node.getAttribute('code'), Code128)
-            return code(self._textual(node),
-                        **utils.getAttrsAsDict(node, ['barWidth', 'barHeight']))
+            attr_types = {'barWidth': 'pt', 'barHeight': 'pt',
+                          'fontName': 'text', 'fontSize': 'pt',
+                          'humanReadable': 'bool'}
+            return code(
+                self._textual(node),
+                **utils.getAttrsAsDict(node, ['barWidth', 'barHeight'], attr_types))
         else:
             sys.stderr.write('Warning: flowable not yet implemented: %s !\n' % (node.localName,))
             return None
