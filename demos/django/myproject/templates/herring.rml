@@ -12,7 +12,7 @@
   <image file="{% pdf_resource "images/logo.png" %}" 
 	 x="40" y="790" height="20" width="145"/>
   <place x="400" y="790" height="20" width="150">
-    <barCode barWidth="0.015in" barHeight="5mm">12345678</barCode>
+    <barCode code="code128" barWidth="0.015in" barHeight="5mm" fontSize="10" humanReadable="1">12345678</barCode>
   </place>
   <place x="380" y="770" height="20" width="180">
     <para style="Header">

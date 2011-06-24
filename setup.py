@@ -9,7 +9,7 @@ except ImportError:
     pass
 
 
-version = '0.6.3'
+version = '0.6.4'
 
 setup(
     name="template2pdf",
