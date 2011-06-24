@@ -19,6 +19,11 @@ Added default ImageResolver, fixing issue #1.
 
 Fixed issue #2.
 
+0.6.3
+~~~~~
+
+Fixed issue #4.
+
 Version 0.5
 -----------
 
