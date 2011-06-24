@@ -11,11 +11,12 @@
 {% block header %}
   <image file="{% pdf_resource "images/logo.png" %}" 
 	 x="40" y="790" height="20" width="145"/>
-  <place x="290" y="770" height="40" width="250">
+  <place x="400" y="790" height="20" width="150">
+    <barCode barWidth="0.015in" barHeight="5mm">12345678</barCode>
+  </place>
+  <place x="380" y="770" height="20" width="180">
     <para style="Header">
-      <font size="+2">領収書 #00000002</font><br/>
-      {{ datestr }}
-      
+      <font size="+2"> 領収書 #12345678 (発行: {{ datestr }}) </font>
     </para>
   </place>
   <setFont name="Serif" size="9"/>
@@ -102,7 +103,6 @@ BC222年2月22日をもって、株式会社ニッの騎士は、100%子会社�
 <para style="Large">
 支払わないと、生きてこの森を帰さないよ。ニッ！
 </para>
-
 {% endblock content %}
 
 {% block footer %}

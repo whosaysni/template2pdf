@@ -1,5 +1,5 @@
 # coding: utf-8
-
+from datetime import date
 from django.http import HttpResponse
 from template2pdf.dj import direct_to_pdf
 
@@ -27,6 +27,7 @@ def myview(request, template_name='herring.rml'):
 
     params['items'] = items
     params['price'] = sum(item['subtotal'] for item in items)
+    params['datestr'] = date.today().strftime('%Y/%m/%d')
     from reportlab.pdfbase.ttfonts import TTFont
     resolver = lambda t, x: TTFont(
         x.get('faceName'),
