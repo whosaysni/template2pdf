@@ -44,6 +44,7 @@ except ImportError:
     
 import utils
 
+
 #
 # Change this to UTF-8 if you plan tu use Reportlab's UTF-8 support
 #
@@ -164,14 +165,19 @@ class _rml_styles(object):
         return self._para_style_update(style, node)
 
 
+FONT_CACHE = {}
+
 def default_font_resolver(font_type, params):
     # Built-in cache.
     if font_type=='UnicodeCIDFont':
+        from reportlab.pdfbase.cidfonts import UnicodeCIDFont
         faceName = params.get('faceName', '')
         font = UnicodeCIDFont(faceName)
     elif font_type=='TTFont':
+        from reportlab.pdfbase.ttfonts import TTFont
         faceName = params.get('faceName', '')
         fileName = params.get('fileName', '')
+        subfontIndex = int(params.get('subfontIndes', '0'))        
         font = FONT_CACHE.setdefault(
             (faceName, fileName), TTFont(faceName, fileName, False, subfontIndex))
     return font
