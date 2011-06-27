@@ -177,9 +177,10 @@ def default_font_resolver(font_type, params):
         from reportlab.pdfbase.ttfonts import TTFont
         faceName = params.get('faceName', '')
         fileName = params.get('fileName', '')
-        subfontIndex = int(params.get('subfontIndes', '0'))        
+        subfontIndex = int(params.get('subfontIndex', '0'))
         font = FONT_CACHE.setdefault(
-            (faceName, fileName), TTFont(faceName, fileName, False, subfontIndex))
+            (faceName, fileName),
+            TTFont(faceName, fileName, False, subfontIndex))
     return font
 
 
