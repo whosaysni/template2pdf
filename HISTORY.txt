@@ -16,7 +16,7 @@ Added default ImageResolver, fixing issue #1.
 0.6.2
 ~~~~~
 
-Fixed issue #2.
+Fixed issue #2
 
 0.6.3
 ~~~~~
@@ -28,6 +28,11 @@ Fixed issue #4.
 
 * Added humanReadble, fontSize, fontName attributes on <barCode> flowable
   (Issue #5). Thanks Jonathan Liu.
+
+0.6.5
+~~~~~
+
+Fixed issue #6.
 
 Version 0.5
 -----------
