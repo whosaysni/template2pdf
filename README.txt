@@ -1,4 +1,6 @@
-# template2pdf: Converts tRML template to PDF #
+==============================================
+template2pdf: Converts tRML template to PDF
+==============================================
 
 **IMPORTANT: Kay support will be dropped.**
 
@@ -8,11 +10,12 @@ Great thanks to:
 * Rohit Sankaran, owner of !GitHub trml2pdf master: http://github.com/roadhead/trml2pdf/
 * Taniguchi Takaki, for early mention of trml2pdf in Japan: http://takaki-web.media-as.org/blog/ 
 
-## Usage ##
+Usage
+======
 
-### Writing tRML with template markups ###
+Writing tRML with template markups
+-------------------------------------
 
-{{{
 <!DOCTYPE document SYSTEM "rml.dtd">
 {% load pdf_tags %}
 <document filename="{{ pdf_name }}">
@@ -68,16 +71,15 @@ Great thanks to:
   </story>
   {% endblock story %}
 </document>
-}}}
+
 
 Note:
-
 * As normal Django templates, inheritance, filters, tags are available.
 * Unfortunately tRML does not support cross references.
 
-## Rendering in a view ##
+Rendering in a view
+----------------------
 
-{{{
 # coding: utf-8
 
 from template2pdf.dj import direct_to_pdf
@@ -86,7 +88,6 @@ def myview(request, template_name='somewhere/yourtemplate.rml'):
     params = {}
     # ... populate params in your order.
     return direct_to_pdf(request, template_name, params)
-}}}
 
 Hints:
- * Setting Content-Disposition will tell your browser to download content as a file, instead of opening in it.
+* Setting Content-Disposition will tell your browser to download content as a file, instead of opening in it.
