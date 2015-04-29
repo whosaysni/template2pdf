@@ -1,22 +1,16 @@
-= template2pdf -- Converts tRML template to PDF =
+# template2pdf: Converts tRML template to PDF #
 
-*for old django_trml2pdf, see http://code.google.com/p/template2pdf/wiki/django_trml2pdf *
-
-日本語の情報は、 アクセンス・テクノロジーのおまけページ (http://omake.accense.com/wiki/template2pdf) に掲載しています。
-
-*Important: django_trml2pdf will be replaced with template2pdf.django in next release. APIs are subject to change.*
+**IMPORTANT: Kay support will be dropped.**
 
 Great thanks to:
- * The !ReportLab Project, for providing handy PDF interface to Python: http://www.reportlab.com/
- * Favien Pinckaers of OpenERP, the original author of trml2pdf code.
- * Rohit Sankaran, owner of !GitHub trml2pdf master: http://github.com/roadhead/trml2pdf/
- * Taniguchi Takaki, for early mention of trml2pdf in Japan: http://takaki-web.media-as.org/blog/ 
+* The !ReportLab Project, for providing handy PDF interface to Python: http://www.reportlab.com/
+* Favien Pinckaers of OpenERP, the original author of trml2pdf code.
+* Rohit Sankaran, owner of !GitHub trml2pdf master: http://github.com/roadhead/trml2pdf/
+* Taniguchi Takaki, for early mention of trml2pdf in Japan: http://takaki-web.media-as.org/blog/ 
 
-== For Django (template2pdf.dj) ==
+## Usage ##
 
-usage:
-
-=== Write your own tRML as a template ===
+### Writing tRML with template markups ###
 
 {{{
 <!DOCTYPE document SYSTEM "rml.dtd">
@@ -78,10 +72,10 @@ usage:
 
 Note:
 
- * you may use of full-power of  Django template: inheritance, filters, tags.
- * Unfortunately tRML does not support cross references.
+* As normal Django templates, inheritance, filters, tags are available.
+* Unfortunately tRML does not support cross references.
 
-=== Render it in a view ===
+## Rendering in a view ##
 
 {{{
 # coding: utf-8
@@ -94,27 +88,5 @@ def myview(request, template_name='somewhere/yourtemplate.rml'):
     return direct_to_pdf(request, template_name, params)
 }}}
 
-Hint:
+Hints:
  * Setting Content-Disposition will tell your browser to download content as a file, instead of opening in it.
-
-== For Kay-Framework on Google AppEngine (template2pdf.kfw) ==
-
- * reportlab, trml2pdf and template2pdf should be bundled in kay project directory.
- * You can write template in similar way for Django -- note that kay uses Jinja2 as template backend. You may see the sample at http://template2pdf-demo.appspot.com/.
- * {{{ {% pdf_resource %} }}} is not supported yet.
-
-=== Render it in a view ===
-
-{{{
-# coding: utf-8
-
-...
-from template2pdf.kfw import direct_to_pdf
-
-def myview(request, template_name='somewhere/yourtemplate.rml'):
-    params = {}
-    # ... populate params in your order.
-    return direct_to_pdf(request, template_name, params)
-}}}
-
-
