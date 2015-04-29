@@ -92,4 +92,4 @@ Rendering in a view
       return direct_to_pdf(request, template_name, params)
 
 Hints:
-* Setting Content-Disposition will tell your browser to download content as a file, instead of opening in it.
+* Content-Disposition can be set to tell your browser downloading content as a file, instead of opening in it.
